@@ -359,6 +359,7 @@ int main(){
 		if(i < iterate-1) 
 			cout<<" , ";
 	}
+	cout<<endl;
 	
 	cout<<"\nresult : Y = ";
 	for(int i = 0; i < iterate; i++){
