@@ -355,6 +355,7 @@ int main(){
 		if(i < iterate-1) 
 			cout<<" + ";
 	}
+	cout << endl;
 	
 	return 0;
 }
