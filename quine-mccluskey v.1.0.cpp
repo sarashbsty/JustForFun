@@ -350,10 +350,10 @@ int main(){
 	
 	implicants_display();
 	
-	cout<<"\n\n\n Essential: \n\n";
+	cout<<"\n\n\n Table to find Essential prime Implicants: \n\n";
 	essential(min_terms,min_count,result,iterate);
 	
-	cout<<"\n\nbinary : ";
+	cout<<"\n\nEssential Prime Implicants : ";
 	for(int i = 0; i < iterate; i++)
 		cout<<result[i]<<"  ";
 	cout<<endl;
