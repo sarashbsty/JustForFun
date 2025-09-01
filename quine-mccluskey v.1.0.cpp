@@ -354,11 +354,8 @@ int main(){
 	essential(min_terms,min_count,result,iterate);
 	
 	cout<<"\n\nbinary : ";
-	for(int i = 0; i < iterate; i++){ 
-		cout<<result[i]<<" ";
-		if(i < iterate-1) 
-			cout<<" , ";
-	}
+	for(int i = 0; i < iterate; i++)
+		cout<<result[i]<<"  ";
 	cout<<endl;
 	
 	cout<<"\nresult : Y = ";
@@ -367,7 +364,7 @@ int main(){
 		if(i < iterate-1) 
 			cout<<" + ";
 	}
-	cout<<endl;
+	cout<<"\n\n";
 	
 	return 0;
 }
