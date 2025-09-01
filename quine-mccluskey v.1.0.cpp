@@ -219,54 +219,6 @@ void prime_implicants(int variables){
 	prime = temp;
 }
 
-void essential(int min_terms[] , int min_count, string result[100] , int &iterate){
-	int arr[100][100];
-	//all zero initialize
-	for(int i = 0; i < prime.count; i++)
-		for(int x = 0; x < min_count; x++)
-			arr[i][min_terms[x]] = 0;
-	
-	//selective entering one
-	for(int i = 0; i < prime.count; i++){
-		for(int x = 0; x < prime.mintermCount[i]; x++)
-			arr[i][prime.minterms[i][x]] = 1;
-	}
-		
-	//dsiplay table
-	cout<<"    \t";
-	for(int i=0;i<min_count;i++) cout<<setw(2)<<min_terms[i]<<"  ";
-	for(int i =0; i < prime.count; i++){
-		cout<< "\n" << setw(2) << i << setw(3) << " - " << char('A'+i) <<"\t";
-		for(int x = 0; x < min_count; x++)
-			cout<<setw(2)<<arr[i][min_terms[x]]<<"  ";
-	}
-	
-	int index, ones;
-	for(int i = 0; i < min_count; i++){
-		ones = 0;
-		for(int x = 0; x < prime.count; x++){
-			if(arr[x][min_terms[i]] == 1){
-				ones++;
-				index = x;
-			}
-		}
-		if(ones == 1)
-			result[iterate++] = prime.binary[index];
-	}
-}	
-	
-void implicants_display(){
-	cout<<"\n\tBinary \t\tminterms\n";
-	for(int i = 0; i < prime.count; i++){
-		cout<<"\n\t"<<prime.binary[i]<<"\t\t";
-		for(int j = 0; j < prime.mintermCount[i]; j++){
-			cout<<prime.minterms[i][j];
-			if(j < prime.mintermCount[i]-1)
-				cout<<",";
-		}
-	}
-}
-
 void removeDuplicates(string arr[], int &size) {
     int newSize = 0;
 
@@ -284,6 +236,65 @@ void removeDuplicates(string arr[], int &size) {
     }
 
     size = newSize;
+}
+
+void essential(int min_terms[] , int min_count, string result[100] , int &iterate){
+	int arr[100][100];
+	//all zero initialize
+	for(int i = 0; i < prime.count; i++)
+		for(int x = 0; x < min_count; x++)
+			arr[i][min_terms[x]] = 0;
+	
+	//selective entering one
+	for(int i = 0; i < prime.count; i++){
+		for(int x = 0; x < prime.mintermCount[i]; x++)
+			arr[i][prime.minterms[i][x]] = 1;
+	}
+		
+	//display table start
+	cout<<"    ";
+	for(int i=0;i<min_count;i++) 
+		cout<<setw(2)<<min_terms[i]<<"  ";
+	
+	cout << "\n" <<string(6+(min_count*4), '-');
+	
+	for(int i =0; i < prime.count; i++){
+		cout<< "\n" << setw(2) << char('A'+i) <<"| ";
+		for(int x = 0; x < min_count; x++)
+			cout<<setw(2)<<arr[i][min_terms[x]]<<"  ";
+		
+		cout << "\n" <<string(6+(min_count*4), '-');
+	}
+	//display table end
+	
+	int index, ones;
+	for(int i = 0; i < min_count; i++){
+		ones = 0;
+		for(int x = 0; x < prime.count; x++){
+			if(arr[x][min_terms[i]] == 1){
+				ones++;
+				index = x;
+			}
+		}
+		if(ones == 1)
+			result[iterate++] = prime.binary[index];
+	}
+	
+	removeDuplicates(result,iterate); // remove duplicates from the result
+}	
+	
+void implicants_display(){
+	cout<<"\n\nPrime Implicants:";
+	cout<<"\n\nBinary \t\tminterms\n";
+	cout << string(25, '-');
+	for(int i = 0; i < prime.count; i++){
+		cout<<"\n"<<prime.binary[i]<<"\t  |\t";
+		for(int j = 0; j < prime.mintermCount[i]; j++){
+			cout<<prime.minterms[i][j];
+			if(j < prime.mintermCount[i]-1)
+				cout<<",";
+		}
+	}
 }
 	
 int main(){
@@ -317,30 +328,30 @@ int main(){
 	cout<<"\n\n"<< min_count<<" Mid terms : "; for(int i=0;i<min_count;i++) cout<<min_terms[i]<<" ";
 	cout<< "\n" << dont_care_count <<" Dont care : "; for(int i = min_count; i < n_terms; i++) cout<<min_terms[i]<<" ";
 	
+	
+	
 	group_table(min_terms,binary,n_terms,n);
 	
 	int CanReduce = reduceGroups(n);
+	prime_implicants(n); // get prime-implicant from the Uncombineds
 	cout << "\n\nInitial Grouping:\n";
     displayGroups(n);
-	prime_implicants(n);
 	
 	
 	int i = 1;
     while(CanReduce){
 		for (int i = 0; i <= n; i++) group[i] = reduced[i];
         CanReduce = reduceGroups(n);
-		cout << "\n " << i++ <<"th Reduction: \n";
-        displayGroups(n);
 		prime_implicants(n);
+		
+		cout << "\n " << i++ <<"th Reduction: \n";
+        displayGroups(n);	
     }	
 	
-	cout<<"\nPrime Implicants:";
 	implicants_display();
 	
 	cout<<"\n\n\n Essential: \n\n";
 	essential(min_terms,min_count,result,iterate);
-	
-	removeDuplicates(result,iterate);
 	
 	cout<<"\n\nbinary : ";
 	for(int i = 0; i < iterate; i++){ 
@@ -355,12 +366,11 @@ int main(){
 		if(i < iterate-1) 
 			cout<<" + ";
 	}
-	cout << endl;
+	cout<<endl;
 	
 	return 0;
 }
 	
 			
 	
-
 	
