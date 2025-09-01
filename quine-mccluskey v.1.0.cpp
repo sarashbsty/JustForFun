@@ -365,7 +365,6 @@ int main(){
 			cout<<" + ";
 	}
 	cout<<"\n\n";
-	cout<<"Fuck YOU";
 	
 	return 0;
 }
