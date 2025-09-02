@@ -344,7 +344,7 @@ int main(){
         CanReduce = reduceGroups(n);
 		prime_implicants(n);
 		
-		cout << "\n " << i++ <<"th Reduction: \n";
+		cout << "\n" << i++ <<"th Reduction: \n";
         displayGroups(n);	
     }	
 	
@@ -358,12 +358,11 @@ int main(){
 		cout<<result[i]<<"  ";
 	cout<<endl;
 	
-	cout<<"\nresult : Y = ";
-	for(int i = 0; i < iterate; i++){
-		cout<<Expression(result[i]);
-		if(i < iterate-1) 
-			cout<<" + ";
-	}
+	cout<<"\nresult : Y ";
+	for(int i = 0; i < n; i++)
+		cout << (i ? "," : "(") << char('A'+i);    //print: A,B,C,....
+	for(int i = 0; i < iterate; i++)
+		cout << (i ? " + " : ") = ") << Expression(result[i]);
 	cout<<"\n\n";
 	
 	return 0;
