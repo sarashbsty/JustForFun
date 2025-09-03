@@ -5,11 +5,13 @@ using namespace std;
 
 void user_input(string &str,int &size,char &style, char &choice){
 	
-	cout<<"Choose a style (eg. 1,2,3) : "; cin>>choice;
-	while(choice < '1' || choice > '3'){
+	cout<<"Choose a style (0 to exit) : "; cin>>choice;
+	while(choice < '0' || choice > '3'){
 		cout<<"INVALID. Choose correct option(1 - 3): "; 
 		cin>>choice;
 	}
+	
+	if(choice == '0') exit(0);
 	
 	if(choice == '2'){ 
 		cout<<"'--- Enter the custom character : "; cin.sync(); cin>>style; 
