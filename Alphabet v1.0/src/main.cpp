@@ -23,7 +23,6 @@ SOFTWARE.
 
 #include<iostream>
 #include<fstream>
-#include "alphabet.h" // for string alphabet function
 #include "iofunc.h"   // for display , print , homepage , input
 using namespace std;
 

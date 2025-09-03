@@ -3,8 +3,7 @@
 #include "alphabet.h"
 using namespace std;
 
-
-string alphabet(char ch, int size, int row, char style){
+string generate(char ch, int size, int row, char style){
 	
 	// Function selector
 	string (*letter[26])(int, int, char) = { A, B, C, D, E, F, G, H,I,  
