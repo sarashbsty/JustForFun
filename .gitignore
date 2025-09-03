@@ -39,3 +39,4 @@
 
 # debug information files
 *.dwo
+/Alphabet v1.0/build
