@@ -54,3 +54,6 @@ dkms.conf
 # debug information files
 *.dwo
 *.txt
+Alphabet v1.0/build/Makefile
+*.marks
+*.cmake
