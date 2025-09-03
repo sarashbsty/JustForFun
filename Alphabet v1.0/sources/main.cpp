@@ -23,7 +23,7 @@ SOFTWARE.
 
 #include<iostream>
 #include<fstream>
-#include "iofunc.h"   // for display , print , homepage , input
+#include "iofunc.h"   // for display , print , homescreen , input
 using namespace std;
 
 int main(){
