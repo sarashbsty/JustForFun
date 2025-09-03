@@ -54,3 +54,11 @@ dkms.conf
 # debug information files
 *.dwo
 *.txt
+*.bin
+*.cmake
+*.bin
+*.internal
+*.make
+*.bin
+*.cmake
+
