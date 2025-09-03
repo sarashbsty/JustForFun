@@ -5,6 +5,7 @@ using namespace std;
 
 void homescreen(){
 	
+	string generate(char ch,int size,int row,char style = '~');
 	cout<<endl;
 	string str = "ALPHABET";
 	for(int row = 1; row <= 7; row++){
