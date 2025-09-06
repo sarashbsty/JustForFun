@@ -1,0 +1,78 @@
+# ninja log v6
+143	2457	7788433460950035	CMakeFiles/quine.dir/source/main.cpp.obj	644d22500e007157
+73	1899	7788433460247773	CMakeFiles/quine.dir/source/display-groups.cpp.obj	b5f6add25397cf90
+60	2067	7788433460120823	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+85	1816	7788433460352238	CMakeFiles/quine.dir/source/display-implicants.cpp.obj	6ee42c99df3b73f7
+34	2391	7787847385795455	CMakeFiles/quine.dir/helper_source/ToBinary.cpp.obj	303f051e516fd36
+39	2390	7787847385860893	CMakeFiles/quine.dir/helper_source/count-1s.cpp.obj	15b712ed11731331
+2457	2794	7788433484084077	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+44	2388	7787847385860893	CMakeFiles/quine.dir/helper_source/is-exist.cpp.obj	8b49d3dbffdc50c
+21	2386	7787847385705701	CMakeFiles/quine.dir/helper_source/Expression.cpp.obj	faa3ce9d5c3ea3ff
+117	1704	7788433460695505	CMakeFiles/quine.dir/source/fill-group-table.cpp.obj	5c8bba5452d0a2d3
+177	1821	7788433461294067	CMakeFiles/quine.dir/source/reduce-table.cpp.obj	846505546164c5cb
+99	2005	7788433460510183	CMakeFiles/quine.dir/source/essential-implicants.cpp.obj	215e7d73a8e6482f
+159	1785	7788433461121305	CMakeFiles/quine.dir/source/prime-implicants.cpp.obj	579332b063d8e4dc
+72	1609	7788436988243754	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1612	1966	7788437003682064	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+57	1526	7788438420668788	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1528	1878	7788438435417465	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+66	1591	7788445172927107	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1593	1958	7788445188203659	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+58	1536	7788445885498893	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1538	1868	7788445900324598	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+56	1625	7788446405762660	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1630	1971	7788446421591733	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+56	1496	7788446965102169	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1498	1863	7788446979515013	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+59	1479	7788447370665068	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1481	1838	7788447384921047	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+58	1580	7788448531540581	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1582	1931	7788448546797234	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+61	1592	7788448969904465	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1594	1943	7788448985240644	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+57	1627	7788449473680961	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1629	2002	7788449489427971	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+61	1624	7788450859490627	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1626	1952	7788450875145079	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+63	1615	7788451998422470	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1617	1964	7788452014003182	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+68	1623	7788453535917627	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1625	1984	7788453551488646	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+57	1604	7788454239652190	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+1606	1941	7788454255141866	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+166	1641	7788458088335238	CMakeFiles/quine.dir/source/reduce-table.cpp.obj	846505546164c5cb
+91	1727	7788458087537707	CMakeFiles/quine.dir/source/display-implicants.cpp.obj	6ee42c99df3b73f7
+149	1742	7788458088176377	CMakeFiles/quine.dir/source/prime-implicants.cpp.obj	579332b063d8e4dc
+118	1781	7788458087871264	CMakeFiles/quine.dir/source/fill-group-table.cpp.obj	5c8bba5452d0a2d3
+79	1863	7788458087434390	CMakeFiles/quine.dir/source/display-groups.cpp.obj	b5f6add25397cf90
+104	1883	7788458087708063	CMakeFiles/quine.dir/source/essential-implicants.cpp.obj	215e7d73a8e6482f
+65	2052	7788458087324538	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+132	2358	7788458088023614	CMakeFiles/quine.dir/source/main.cpp.obj	644d22500e007157
+2358	2704	7788458110255894	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+65	1588	7788459242577884	CMakeFiles/quine.dir/source/fill-group-table.cpp.obj	5c8bba5452d0a2d3
+101	1612	7788459243004052	CMakeFiles/quine.dir/source/prime-implicants.cpp.obj	579332b063d8e4dc
+40	1615	7788459242344917	CMakeFiles/quine.dir/source/display-implicants.cpp.obj	6ee42c99df3b73f7
+118	1629	7788459243154260	CMakeFiles/quine.dir/source/reduce-table.cpp.obj	846505546164c5cb
+29	1780	7788459242257968	CMakeFiles/quine.dir/source/display-groups.cpp.obj	b5f6add25397cf90
+52	1799	7788459242450141	CMakeFiles/quine.dir/source/essential-implicants.cpp.obj	215e7d73a8e6482f
+16	1971	7788459242129206	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+81	2281	7788459242793104	CMakeFiles/quine.dir/source/main.cpp.obj	644d22500e007157
+2282	2626	7788459264742255	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+31	1157	7788478011159247	CMakeFiles/quine.dir/source/display-implicants.cpp.obj	6ee42c99df3b73f7
+75	1176	7788478011616687	CMakeFiles/quine.dir/source/prime-implicants.cpp.obj	579332b063d8e4dc
+50	1324	7788478011359840	CMakeFiles/quine.dir/source/fill-group-table.cpp.obj	5c8bba5452d0a2d3
+87	1356	7788478011737084	CMakeFiles/quine.dir/source/reduce-table.cpp.obj	846505546164c5cb
+23	1377	7788478010998692	CMakeFiles/quine.dir/source/display-groups.cpp.obj	b5f6add25397cf90
+41	1403	7788478011159247	CMakeFiles/quine.dir/source/essential-implicants.cpp.obj	215e7d73a8e6482f
+12	1553	7788478010840352	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+62	1795	7788478011494459	CMakeFiles/quine.dir/source/main.cpp.obj	644d22500e007157
+1796	2091	7788478028786697	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
+67	1122	7788478091686829	CMakeFiles/quine.dir/source/display-implicants.cpp.obj	6ee42c99df3b73f7
+123	1160	7788478092342086	CMakeFiles/quine.dir/source/reduce-table.cpp.obj	846505546164c5cb
+111	1177	7788478092223109	CMakeFiles/quine.dir/source/prime-implicants.cpp.obj	579332b063d8e4dc
+87	1276	7788478091844376	CMakeFiles/quine.dir/source/fill-group-table.cpp.obj	5c8bba5452d0a2d3
+58	1429	7788478091686829	CMakeFiles/quine.dir/source/display-groups.cpp.obj	b5f6add25397cf90
+47	1439	7788478091525688	CMakeFiles/quine.dir/source/display-essential-table.cpp.obj	f67b0e2ab75605fe
+76	1447	7788478091844376	CMakeFiles/quine.dir/source/essential-implicants.cpp.obj	215e7d73a8e6482f
+99	1776	7788478092042507	CMakeFiles/quine.dir/source/main.cpp.obj	644d22500e007157
+1777	2015	7788478108810644	C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0/quine.exe	1f30b1f2d69bb301
