@@ -25,6 +25,7 @@ SOFTWARE.
 
 #include<stdio.h>
 #include<math.h>
+#include "quine.h"
 #include "helper.h"
 					
 int main(){
@@ -60,23 +61,16 @@ int main(){
 	printf("\n%d Dont care  : ",dont_care_count); 
 	for(int i = min_count; i < n_terms; i++) 
 		printf("%d ",min_terms[i]);
-	
-	char item[100];
-	printf("\n\nEnter which binary to find : ");
-	scanf(" %99[01]",item);
-	
-	int check = is_exist(binary , item , n_terms);
-	if(check) printf("%s is in binary",item);
-	else printf("%s is not in binary" , item);
-}
-	
+		
 	//data input stops
 	
-/*	string result[100];
 	static quine group[100], reduced[100] , prime;  // stack memory very low (8mb). group[100] -> 30mb
 	
 	fill_group_table(group, min_terms, binary, n_terms, var);
+	displayGroups(group, var);
+}
 	
+/*	
 	int CanReduce = reduce_table(group, reduced, var);
 	prime_implicants(group, prime, var); // get prime-implicant from the Uncombineds
 	cout << "\n\nInitial Grouping:\n";
