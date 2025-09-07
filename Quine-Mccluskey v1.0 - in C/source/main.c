@@ -23,47 +23,60 @@ SOFTWARE.
 
 // bugs found : after entering minterms input, instead of ending it with -1 but with *1, all the leftover space of array is filled with 0
 
-#include<iostream>
+#include<stdio.h>
 #include<math.h>
-#include <iomanip>
 
-#include "quine.h" // quine struture and its functions
-#include "helper.h"
-using namespace std;
+void ToBinary(char binary[][100] , int minterms[] , int count, int var){
+	for(int i = 0; i < count; i++){
+		int j;
+		for(j = 0; j < var; j++)
+			binary[i][var-1-j] = ((minterms[i] >> j) & 1) ? '1' : '0';
+		binary[i][j] = '\0';
+	}
+}	
 					
 int main(){
 	int var , essential_table[100][100] , min_terms[10000] , min_count = 0, dont_care_count = 0 , temp;
 	
 	// data input start
-	cout<<"Enter no. of variables : ";
-	cin>>var;
+	printf("Enter no. of variables : ");
+	scanf("%d" ,&var);
 	
-	cout<<"Enter min terms (-1 to end) : ";
+	printf("Enter min terms (-1 to end) : ");
 	while(min_count < pow(2,var)){
-		cin>>temp;
+		scanf("%d",&temp);
 		if(temp == -1) break;
 		min_terms[min_count++] = temp;
 	}
 	
-	cout<<"Enter dont care (-1 to end) : ";
+	printf("Enter dont care (-1 to end) : ");
 	while((min_count+dont_care_count) < pow(2,var)){
-		cin>>temp;
+		scanf("%d",&temp);
 		if(temp == -1) break;
 		min_terms[min_count + dont_care_count] = temp;
 		dont_care_count++;
 	}
 	
 	int n_terms = min_count + dont_care_count;
-	string binary[10000];
-	for(int i = 0; i < n_terms; i++) binary[i] = ToBinary(min_terms[i],var);
+	char binary[1000][100];
+	ToBinary(binary ,min_terms, n_terms ,var);
 	
+	printf("\n\n%d Mid terms : ",min_count); 
+	for(int i=0;i<min_count;i++) 
+		printf("%d ",min_terms[i]);
 	
-	cout<<"\n\n"<< min_count<<" Mid terms : "; for(int i=0;i<min_count;i++) cout<<min_terms[i]<<" ";
-	cout<< "\n" << dont_care_count <<" Dont care : "; for(int i = min_count; i < n_terms; i++) cout<<min_terms[i]<<" ";
+	printf("\n%d Dont care  : ",dont_care_count); 
+	for(int i = min_count; i < n_terms; i++) 
+		printf("%d ",min_terms[i]);
+	
+	printf("\n\nBinary represent : ");
+	for(int i = 0; i < n_terms; i++)
+		printf("%s ",binary[i]);
+}
 	
 	//data input stops
 	
-	string result[100];
+/*	string result[100];
 	static quine group[100], reduced[100] , prime;  // stack memory very low (8mb). group[100] -> 30mb
 	
 	fill_group_table(group, min_terms, binary, n_terms, var);
@@ -105,6 +118,8 @@ int main(){
 	
 	return 0;
 }
+
+*/
 	
 			
 	
