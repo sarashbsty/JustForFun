@@ -1,3 +1,0 @@
-C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0 - in C/build/CMakeFiles/quine.dir
-C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0 - in C/build/CMakeFiles/edit_cache.dir
-C:/Users/Sarash/Desktop/GitHub/JustForFun/Quine-Mccluskey v1.0 - in C/build/CMakeFiles/rebuild_cache.dir
