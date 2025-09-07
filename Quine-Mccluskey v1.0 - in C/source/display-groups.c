@@ -11,8 +11,6 @@ void displayGroups(quine group[] , int variables){
 	memset(str_line, '-', line);
     str_line[line] = '\0';
 	
-	
-	
 	// separator line at start
 	printf("\n%s\n",str_line);
 	
@@ -36,15 +34,16 @@ void displayGroups(quine group[] , int variables){
                 printf("%-8s"," ");
 			printf("%-2s","|");
 
-            /*// print all minterms associated with this binary
+            /*
+			// print all minterms associated with this binary
             string mintermStr = "";
             for (int k = 0; k < group[i].mintermCount[j]; k++) {
                 mintermStr += to_string(group[i].minterms[j][k]);
                 if (k < group[i].mintermCount[j] - 1) mintermStr += ","; 
             }
 			if(group[i].combined[j] == 0) mintermStr += " (x) ";
-			
 			*/
+			
             printf("%-20s",group[i].binary[j]);
 			printf("%-2s","|");
 			printf("%-20s",group[i].binary[j]);
