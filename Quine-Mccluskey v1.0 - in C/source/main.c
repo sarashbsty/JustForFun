@@ -25,15 +25,7 @@ SOFTWARE.
 
 #include<stdio.h>
 #include<math.h>
-
-void ToBinary(char binary[][100] , int minterms[] , int count, int var){
-	for(int i = 0; i < count; i++){
-		int j;
-		for(j = 0; j < var; j++)
-			binary[i][var-1-j] = ((minterms[i] >> j) & 1) ? '1' : '0';
-		binary[i][j] = '\0';
-	}
-}	
+#include "helper.h"
 					
 int main(){
 	int var , essential_table[100][100] , min_terms[10000] , min_count = 0, dont_care_count = 0 , temp;
@@ -69,9 +61,13 @@ int main(){
 	for(int i = min_count; i < n_terms; i++) 
 		printf("%d ",min_terms[i]);
 	
-	printf("\n\nBinary represent : ");
-	for(int i = 0; i < n_terms; i++)
-		printf("%s ",binary[i]);
+	char item[100];
+	printf("\n\nEnter which binary to find : ");
+	scanf(" %99[01]",item);
+	
+	int check = is_exist(binary , item , n_terms);
+	if(check) printf("%s is in binary",item);
+	else printf("%s is not in binary" , item);
 }
 	
 	//data input stops

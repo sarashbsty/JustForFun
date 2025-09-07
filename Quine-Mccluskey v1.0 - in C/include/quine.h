@@ -1,6 +1,5 @@
 #pragma once
-using namespace std;
-
+/*
 struct quine{                   
     int count;                       
     string binary[1000];             
@@ -16,3 +15,4 @@ void prime_implicants(quine group[] , quine &prime , int variables);
 void display_implicants(const quine &prime);
 int essential_implicants(const quine &prime , int arr[100][100] , int min_terms[] , int min_count, string result[100]);
 void display_essential_table(const quine &prime , int arr[100][100] , int min_terms[] , int min_count);
+*/
