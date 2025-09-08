@@ -23,12 +23,21 @@ SOFTWARE.
 
 // bugs found : after entering minterms input, instead of ending it with -1 but with *1, all the leftover space of array is filled with 0
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include<stdio.h>
 #include<math.h>
 #include "quine.h"
 #include "helper.h"
 					
 int main(){
+	
+	#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+	#endif
+	
 	int var , essential_table[100][100] , min_terms[10000] , min_count = 0, dont_care_count = 0 , temp;
 	
 	// data input start
@@ -67,13 +76,10 @@ int main(){
 	static quine group[100], reduced[100] , prime;  // stack memory very low (8mb). group[100] -> 30mb
 	
 	fill_group_table(group, min_terms, binary, n_terms, var);
-	displayGroups(group, var);
-}
 	
-/*	
 	int CanReduce = reduce_table(group, reduced, var);
-	prime_implicants(group, prime, var); // get prime-implicant from the Uncombineds
-	cout << "\n\nInitial Grouping:\n";
+//	prime_implicants(group, prime, var); // get prime-implicant from the Uncombineds
+	printf("\n\nInitial Grouping:\n");
     displayGroups(group, var);
 	
 	
@@ -81,12 +87,13 @@ int main(){
     while(CanReduce){
 		for (int i = 0; i <= var; i++) group[i] = reduced[i];
         CanReduce = reduce_table(group, reduced, var);
-		prime_implicants(group, prime, var);
+	//	prime_implicants(group, prime, var);
 		
-		cout << "\n" << i++ <<"th Reduction: \n";
+		printf("\n%dth Reduction: \n" , i++);
         displayGroups(group, var);	
     }	
-	
+}
+	/*
 	display_implicants(prime);
 	
 	int iterate = essential_implicants(prime, essential_table, min_terms, min_count, result);
