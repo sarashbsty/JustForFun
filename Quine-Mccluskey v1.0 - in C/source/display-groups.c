@@ -2,9 +2,10 @@
 #include<string.h>
 #include "quine.h" // quine struture
 
+
 void displayGroups(quine group[] , int variables){
 	
-	int line = 2+8+2+20+2+20+1;
+	int line = 2+8+2+20+2+20+5+1;
     char str_line[1000];
 	if (line >= sizeof(str_line)) line = sizeof(str_line) - 1; // prevent overflow
 	
@@ -17,7 +18,7 @@ void displayGroups(quine group[] , int variables){
 	printf("%-2s", "|");
     printf("%-8s%-2s", "Group", "|");
     printf("%-20s%-2s", "MinTerm", "|");
-    printf("%-20s%s\n", "Binary", "|");
+    printf("%-25s%s\n", "Binary", "|");
          
     for (int i = 0; i <= variables; i++) {
         if (group[i].count == 0) continue; // skip empty groups
@@ -34,19 +35,22 @@ void displayGroups(quine group[] , int variables){
                 printf("%-8s"," ");
 			printf("%-2s","|");
 
-            /*
 			// print all minterms associated with this binary
-            string mintermStr = "";
-            for (int k = 0; k < group[i].mintermCount[j]; k++) {
-                mintermStr += to_string(group[i].minterms[j][k]);
-                if (k < group[i].mintermCount[j] - 1) mintermStr += ","; 
+            char str[100]; 
+			int written , offset = 0 , size = group[i].mintermCount[j];
+            for (int k = 0; k < size; k++) {
+				int num = group[i].minterms[j][k];
+				written = snprintf(str+offset , sizeof(str)-offset , (k < size-1) ? "%d," : "%d" , num);
+				offset += written;
             }
-			if(group[i].combined[j] == 0) mintermStr += " (x) ";
-			*/
 			
-            printf("%-20s",group[i].binary[j]);
+            printf("%-20s",str);
 			printf("%-2s","|");
 			printf("%-20s",group[i].binary[j]);
+			
+			if(group[i].combined[j] == 0) printf("%-5s"," [X] ");
+			else printf("%-5s"," ");
+			
 			printf("|\n");
                  
         }        
