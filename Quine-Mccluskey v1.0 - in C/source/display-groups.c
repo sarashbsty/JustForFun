@@ -9,18 +9,20 @@ void displayGroups(quine group[] , int variables){
     char str_line[1000];
 	if (line >= sizeof(str_line)) line = sizeof(str_line) - 1; // prevent overflow
 	
-	memset(str_line, '-', line);
+	memset(str_line, '=', line);
     str_line[line] = '\0';
 	
 	// separator line at start
 	printf("%s\n",str_line);
 	
-	printf("%-2s", "|");
-    printf("%-5s%-3s", "Group", " |");
-    printf("%-20s%-3s", "MinTerm", " |");
-    printf("%-15s%-3s", "Binary", " |");
-	printf("%-8s", "Combined");
-	printf("%2s\n", "|");
+	printf("| %-5s | %-20s | %-15s | %-8s |", "Group", "MinTerm", "Binary", "Combined");
+
+//	printf("%-2s", "|");
+//  printf("%-5s%-3s", "Group", " |");
+//  printf("%-20s%-3s", "MinTerm", " |");
+ // printf("%-15s%-3s", "Binary", " |");
+//	printf("%-8s%2s", "Combined" , "|");
+	printf("\n");
          
     for (int i = 0; i <= variables; i++) {
         if (group[i].count == 0) continue; // skip empty groups
@@ -29,14 +31,7 @@ void displayGroups(quine group[] , int variables){
 		printf("%s\n",str_line);  
 		
         for (int j = 0; j < group[i].count; j++) {
-			
-			printf("%-2s", "|");
-            if (j == 0) 
-                printf("%-5d",i) ; // print group number only once
-            else 
-                printf("%-5s"," ");
-			printf("%-3s"," |");
-
+		
 			// print all minterms associated with this binary
             char str[100]; 
 			int offset = 0 , size = group[i].mintermCount[j];
@@ -45,6 +40,14 @@ void displayGroups(quine group[] , int variables){
 				int written = snprintf(str+offset , sizeof(str)-offset , (k < size-1) ? "%d," : "%d" , num);
 				offset += written;
             }
+			
+			printf("%-2s", "|");
+            if (j == 0) 
+                printf("%-5d",i) ; // print group number only once
+            else 
+                printf("%-5s"," ");
+			printf("%-3s"," |");
+			
 			
             printf("%-20s%-3s", str , " |");
 			printf("%-15s%-3s", group[i].binary[j] , " |");
