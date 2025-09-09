@@ -38,7 +38,7 @@ int main(){
     SetConsoleOutputCP(CP_UTF8);
 	#endif
 	
-	int var , essential_table[100][100] , min_terms[10000] , min_count = 0, dont_care_count = 0 , temp;
+	int var , min_terms[10000] , min_count = 0, dont_care_count = 0 , temp;
 	
 	// data input start
 	printf("Enter no. of variables : ");
@@ -96,29 +96,34 @@ int main(){
 	printf("\n");
 	display_implicants(&prime);
 	
-}/*
+	char result[1000][100];
+	int essential_table[100][100];
 	
-	int iterate = essential_implicants(prime, essential_table, min_terms, min_count, result);
+	int iterate = essential_implicants(&prime, essential_table, min_terms, min_count, result);
 	
-	cout<<"\n\n\nTable to find Essential prime Implicants: \n\n";
-	display_essential_table(prime, essential_table, min_terms, min_count);
+	printf("\n\n\nTable to find Essential prime Implicants: \n\n");
+	display_essential_table(&prime, essential_table, min_terms, min_count);
 	
-	cout<<"\n\nEssential Prime Implicants : ";
+	printf("\n\nEssential Prime Implicants : ");
 	for(int i = 0; i < iterate; i++)
-		cout<<result[i]<<"  ";
-	cout<<endl;
+		printf("%s  ", result[i]);
+	printf("\n");
 	
-	cout<<"\nresult : Y ";
-	for(int i = 0; i < var; i++)
-		cout << (i ? "," : "(") << char('A'+i);    //print: A,B,C,....
-	for(int i = 0; i < iterate; i++)
-		cout << (i ? " + " : ") = ") << Expression(result[i]);
-	cout<<"\n\n";
+	printf("\nresult : Y (");
+	for(int i = 0; i < var; i++){
+		printf("%c" , (char)('A'+i));
+		if(i < var-1) printf(",");
+		else printf(") = ");
+	}
 	
+	for(int i = 0; i < iterate; i++){
+		Expression(result[i]);
+		if(i < iterate-1) printf(" + ");
+	}
+	printf("\n\n");
 	return 0;
 }
 
-*/
 	
 			
 	
