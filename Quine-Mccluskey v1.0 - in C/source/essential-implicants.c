@@ -2,6 +2,8 @@
 #include "quine.h" // quine struture
 #include "helper.h"
 
+//check for improvemnt
+
 int essential_implicants(const quine *prime , int arr[100][100] , int min_terms[] , int min_count, char result[][100]){
 	
 	//all zero initialize
