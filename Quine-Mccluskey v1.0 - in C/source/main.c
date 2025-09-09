@@ -78,7 +78,7 @@ int main(){
 	fill_group_table(group, min_terms, binary, n_terms, var);
 	
 	int CanReduce = reduce_table(group, reduced, var);
-//	prime_implicants(group, prime, var); // get prime-implicant from the Uncombineds
+	prime_implicants(group, &prime, var); // get prime-implicant from the Uncombineds
 	printf("\n\nInitial Grouping:\n");
     displayGroups(group, var);
 	
@@ -87,14 +87,16 @@ int main(){
     while(CanReduce){
 		for (int i = 0; i <= var; i++) group[i] = reduced[i];
         CanReduce = reduce_table(group, reduced, var);
-	//	prime_implicants(group, prime, var);
+		prime_implicants(group, &prime, var);
 		
 		printf("\n%dth Reduction: \n" , i++);
         displayGroups(group, var);	
     }	
-}
-	/*
-	display_implicants(prime);
+	
+	printf("\n");
+	display_implicants(&prime);
+	
+}/*
 	
 	int iterate = essential_implicants(prime, essential_table, min_terms, min_count, result);
 	
