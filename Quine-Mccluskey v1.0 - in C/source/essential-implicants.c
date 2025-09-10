@@ -4,34 +4,36 @@
 
 //check for improvemnt
 
-int essential_implicants(const quine *prime , int arr[100][100] , int min_terms[] , int min_count, char result[][100]){
+int essential_implicants(const quine *prime , char arr[100][100][6] , int min_terms[] , int min_count, char result[][100]){
 	
 	//all zero initialize
 	for(int i = 0; i < prime->count; i++)
-		for(int x = 0; x < min_count; x++)
-			arr[i][min_terms[x]] = 0;
+		for(int j = 0; j < min_count; j++)
+			strcpy(arr[i][min_terms[j]] , "  0  ");
 	
 	//selective entering one
-	for(int i = 0; i < prime->count; i++){
-		for(int x = 0; x < prime->mintermCount[i]; x++)
-			arr[i][prime->minterms[i][x]] = 1;
-	}
+	for(int i = 0; i < prime->count; i++)
+		for(int j = 0; j < prime->mintermCount[i]; j++)
+			strcpy(arr[i][prime->minterms[i][j]] , "  1  ");
 	
 	//Finding the essential implicant by finding column with only one '1' and the prime implecant in that 1's row
-	int count = 0,index, ones;
-	for(int i = 0; i < min_count; i++){
+	int count = 0;
+	for(int j = 0; j < min_count; j++){
 		
-		ones = 0;
-		for(int x = 0; x < prime->count; x++){
-			if(arr[x][min_terms[i]] == 1){
+		int index ,ones = 0;
+		for(int i = 0; i < prime->count; i++){
+			if(strcmp(arr[i][min_terms[j]], "  1  ") == 0){
 				ones++;
-				index = x;
+				index = i;
 			}
+		}		
+		if(ones == 1){
+			strcpy(arr[index][min_terms[j]] , " (1) " );
+			
+			// checking ones is only 1 and duplicates
+			if(!is_exist(result, prime->binary[index] , count))
+				strcpy(result[count++] , prime->binary[index]);
 		}
-		// checking ones is only 1 and duplicates
-		int check = is_exist(result, prime->binary[index] , count);
-		if(ones == 1 && check == 0)
-			strcpy(result[count++] , prime->binary[index]);
 	}
 	return count;
 }

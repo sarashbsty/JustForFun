@@ -97,11 +97,11 @@ int main(){
 	display_implicants(&prime);
 	
 	char result[1000][100];
-	int essential_table[100][100];
+	char essential_table[100][100][6];
 	
 	int iterate = essential_implicants(&prime, essential_table, min_terms, min_count, result);
 	
-	printf("\n\n\nTable to find Essential prime Implicants: \n\n");
+	printf("\n\n\nTable to find Essential prime Implicants: \n");
 	display_essential_table(&prime, essential_table, min_terms, min_count);
 	
 	printf("\n\nEssential Prime Implicants : ");
